@@ -448,6 +448,17 @@ legend + * {
   .img-header {
     width: 350px;
   }
+
+ 
+  .partner1 {
+    width: 100px;
+  }
+  .partner2 {
+    width: 80px;
+  }
+  .partner3 {
+    width: 70px;
+  }
 }
 
 

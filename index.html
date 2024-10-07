@@ -4,9 +4,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Vertigéo - Junior Etudes</title>
+    <meta name="description"
+        content="Vertigéo Junior Études, Junior-Création de l'ENSG Géomatique, est la première junior en France dans le domaine de la Géomatique." />
+    <meta name="application-name" content="Vertigéo" />
+    <meta name="author" content="Vertigéo Junior Études" />
+    <title>Vertigéo | Junior Etudes</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -17,13 +19,15 @@
         rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/animation.css" rel="stylesheet" />
+
 </head>
 
 <body id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="#page-top">Vertigéo</a>
+            <a class="navbar-brand" href="#page-top" alt="Vertigéo">Vertigéo</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -48,17 +52,57 @@
                     <h1 class="mx-auto my-0 text-uppercase"><img class="img-header" src="assets/img/logo.png" alt="">
                     </h1>
                     <h2 class="text-white-50 mx-auto mt-2 mt-4 mb-5">La junior de l'ENSG Géomatique</h2>
-                    <a class="btn btn-primary" href="#contact">Contacter-nous</a>
+                    <a class="btn btn-primary" href="#contact">Contactez-nous</a>
                 </div>
             </div>
         </div>
-        <div class="text-center partners-img p-1">
-            <img class="partner1" src="assets/img/CNJE.png" width="150px" alt="">
-            <img class="partner2 px-2" src="assets/img/IGN_logo.svg" width="110px">
-            <img class="partner3 mx-3" src="assets/img/ENSG_logo.png" width="100px">
-
+        <div class="p-2">
+            <div id="partners" class="text-center partners-img p-4">
+                <img class="partner1 m-2" src="assets/img/CNJE.png" width="75px" alt="CNJE">
+                <img class="partner2 m-2" src="assets/img/IGN_logo.svg" width="110px" alt="IGN">
+                <img class="partner3 m-2" src="assets/img/ENSG_logo.png" width="105" alt="ENSG Géomatique">
+                <img class="partner4 m-2" src="assets/img/odoo.png" width="150px" alt="Odoo">
+            </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    let observer = new IntersectionObserver((entries, observer) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.1 });
+                    let target = document.querySelector('#partners');
+                    observer.observe(target);
+                });
+            </script>
         </div>
+
     </header>
+
+
+
+
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Inscriptions Ciril Group x Vertigéo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>L'inscription se fait ci-dessous 👇</p>
+                    <a href="https://forms.gle/x1e4PS6zWNaHANxg6">Inscriptions</a>
+                </div>
+                <img src="assets/img/popup_img.png" style="" class="img-fluid popup-img" alt="...">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Fermer</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 
     <!-- About-->
@@ -76,21 +120,107 @@
                     </p>
                 </div>
             </div>
+            <div class="container mt-5">
+                <div class="row row-cols-xxl-2 row-cols-xl-2 row-cols-md-1 row-cols-sm-1 row-cols-1">
+
+                    <div class="col py-5">
+                        <div class="card h-100 " style="width: 20rem; margin: auto;">
+                            <div class="card-body my-5 text-center">
+                                <i class="fa-solid fa-person fa-3x mb-4"></i>
+                                <h4 class="text-uppercase m-0">Intervenants</h4>
+                                <hr class="my-4 mx-auto" />
+                                <p class="fs-1 stat-number text-black-50" data-target="300">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col py-5">
+                        <div class="card h-100 " style="width: 20rem; margin: auto;">
+                            <div class="card-body my-5 text-center">
+                                <i class="fa-solid fa-flask fa-3x mb-4"></i>
+                                <h4 class="text-uppercase m-0">Laboratoires de recherche</h4>
+                                <hr class="my-4 mx-auto" />
+                                <p class="fs-1 stat-number text-black-50" data-target="5">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col py-5">
+                        <div class="card h-100" style="width: 20rem; margin: auto;">
+                            <div class="card-body my-5 text-center">
+                                <i class="fa-solid fa-school fa-3x mb-4"></i>
+                                <h4 class="text-uppercase m-0">Enseignements spécialisés</h4>
+                                <hr class="my-4 mx-auto" />
+                                <p class="fs-1 stat-number text-black-50" data-target="8">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col py-5">
+                        <div class="card h-100" style="width: 20rem; margin: auto;">
+                            <div class="card-body  my-5 text-center">
+                                <i class="fa-solid fa-calendar-days fa-3x mb-4"></i>
+                                <h4 class="text-uppercase m-0">Années d'expérience en Géomatique</h4>
+                                <hr class="my-4 mx-auto" />
+                                <p class="fs-1 stat-number text-black-50" data-target="23">0</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
             <img class="img-fluid position-relative" src="assets/img/earth.png " alt="..." />
+
         </div>
     </section>
     <!-- Projects-->
+    <div class="marquee">
+        <h2 class="text-center py-5" id="clients">Ils nous font confiance</h2>
+        <div class="marquee-content">
+            <img class="partner5 m-4" src="assets/img/odoo.png" height="50px">
+            <img class="partner6 m-4" src="assets/img/louvre1.png" height="50px">
+            <img class="partner7 m-4" src="assets/img/prnsn.png" height="50px">
+            <img class="partner8 m-4" src="assets/img/ratp.png" height="50px">
+            <img class="partner9 m-4" src="assets/img/meteofrancez.png" height="50px">
+            <img class="partner10 m-4" src="assets/img/afigeo.png" height="50px">
+            <img class="partner11 m-4" src="assets/img/Logo_CCI_Essonne.svg" height="50px">
+            <img class="partner12 m-4" src="assets/img/toposat.png" height="50px">
+            <img class="partner13 m-4" src="assets/img/outdoorvision.png" height="50px">
+            <img class="partner14 m-4" src="assets/img/flyingwhales1.png" height="50px">
+            <!-- Duplicate images for seamless looping -->
+            <img class="partner5 m-4" src="assets/img/odoo.png" height="50px">
+            <img class="partner6 m-4" src="assets/img/louvre1.png" height="50px">
+            <img class="partner7 m-4" src="assets/img/prnsn.png" height="50px">
+            <img class="partner8 m-4" src="assets/img/ratp.png" height="50px">
+            <img class="partner9 m-4" src="assets/img/meteofrancez.png" height="50px">
+            <img class="partner10 m-4" src="assets/img/afigeo.png" height="50px">
+            <img class="partner11 m-4" src="assets/img/Logo_CCI_Essonne.svg" height="50px">
+            <img class="partner12 m-4" src="assets/img/toposat.png" height="50px">
+            <img class="partner13 m-4" src="assets/img/outdoorvision.png" height="50px">
+            <img class="partner14 m-4" src="assets/img/flyingwhales1.png" height="50px">
+            <!-- Duplicate images for seamless looping -->
+            <img class="partner5 m-4" src="assets/img/odoo.png" height="50px">
+            <img class="partner6 m-4" src="assets/img/louvre1.png" height="50px">
+            <img class="partner7 m-4" src="assets/img/prnsn.png" height="50px">
+            <img class="partner8 m-4" src="assets/img/ratp.png" height="50px">
+            <img class="partner9 m-4" src="assets/img/meteofrancez.png" height="50px">
+            <img class="partner10 m-4" src="assets/img/afigeo.png" height="50px">
+            <img class="partner11 m-4" src="assets/img/Logo_CCI_Essonne.svg" height="50px">
+            <img class="partner12 m-4" src="assets/img/toposat.png" height="50px">
+            <img class="partner13 m-4" src="assets/img/outdoorvision.png" height="50px">
+            <img class="partner14 m-4" src="assets/img/flyingwhales1.png" height="50px">
+        </div>
+    </div>
+
     <section class="projects-section bg-light" id="projects">
         <div class="container px-4 px-lg-5">
             <!-- Featured Project Row-->
-            <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+            <div class="row gx-0 mb-lg-5 align-items-center">
                 <div class="col-xl-8 col-lg-7 logo-header"><img class="img-fluid mb-3 mb-lg-0" width="700"
                         src="assets/img/bureau.png" alt="..." /></div>
                 <div class="col-xl-4 col-lg-5">
                     <div class="featured-text text-start text-lg-left">
                         <h4>Notre équipe</h4>
                         <p class="text-black-50 mb-0">Le nouveau bureau de Vertigéo est une équipe dynamique et
-                            déterminée, dirigée par <strong>Antoine</strong>, président charismatique.
+                            déterminée, dirigée par <strong>Antoine</strong>, président aux compétences multiples.
                             <strong>Bruce</strong>
                             assure une
                             gestion
@@ -99,27 +229,49 @@
                             projet, conjuguent compétence et attention. <strong>Marcel</strong>, en tant que secrétaire
                             général, garantit
                             un fonctionnement fluide, tandis que <strong>Romain</strong>, notre vice-trésorier, offre un
-                            soutien solide.
+                            soutien solide en comptabilité.
                         </p>
                     </div>
                 </div>
             </div>
-            <figure class="text-center py-5">
-                <blockquote class="blockquote pt-5 text-black-50">
-                    <p> "Le service clientèle est bien plus qu'une simple interaction ; c'est l'art de créer des
-                        relations durables. Notre engagement à fournir des études de
-                        qualité transcende les attentes, car chaque client mérite satisfaction."
-                    </p>
-                </blockquote>
-                <figcaption class="blockquote-footer pt-2 pb-5">
-                    Le nouveau bureau <cite title="Source Title">Vertigéo</cite>
-                </figcaption>
-            </figure>
+
             <!-- Project One Row-->
 
 
-            <h2 class="text-center" id="clients">Nos clients</h2>
-            <div class="row gx-0 mb-5 mb-lg-0 justify-content-center mt-4">
+            <h2 class="text-center mt-5 py-4" id="clients">Nos clients</h2>
+            <figure class="text-center">
+                <blockquote class="blockquote pt-5 text-black-50">
+                    <p> "Geovelo calcule des itinéraires à vélo adaptés à chaque cycliste, du plus rapide au plus
+                        sécurisé. Nous utilisons aussi les véloroutes, de grands itinéraires à vocations
+                        touristiques.
+                        Vertigeo a complété et diffusé
+                        l'information OpenStreetMap à ce sujet. Grâce aux étudiants compétents de l'ENSG, cette
+                        solution
+                        a été mise en place rapidement et efficacement. Le devis était de qualité, les travaux ont
+                        été
+                        effectués rapidement, et le suivi du projet a instauré une confiance essentielle. C'est un
+                        succès, et nous referons appel à vos services !"
+                    </p>
+                </blockquote>
+                <figcaption class="blockquote-footer pt-2 pb-5">
+                    Samuel Deschamps Berger, ingénieur chez <cite title="Source Title">Geovelo</cite>
+                </figcaption>
+            </figure>
+            <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                <div class="col-lg-6"><img class="img-fluid" src="assets/img/geovelo.png" alt="..." /></div>
+                <div class="col-lg-6 order-lg-first">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-right">
+                                <h4 class="text-white">Geovelo</h4>
+                                <p class="mb-0 text-white-50">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
                 <div class="col-lg-6"><img class="img-fluid" src="assets/img/flyingwhales.png" alt="..." /></div>
                 <div class="col-lg-6">
                     <div class="bg-black text-center h-100 project">
@@ -155,6 +307,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Project Three Row-->
             <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
                 <div class="col-lg-6"><img class="img-fluid" src="assets/img/louvre.png" alt="..." /></div>
                 <div class="col-lg-6">
@@ -169,8 +322,8 @@
                     </div>
                 </div>
             </div>
-            <!-- Project Two Row-->
-            <div class="row gx-0 justify-content-center">
+            <!-- Project Four Row-->
+            <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
                 <div class="col-lg-6"><img class="img-fluid" src="assets/img/magellium.png" alt="..." /></div>
                 <div class="col-lg-6 order-lg-first">
                     <div class="bg-black text-center h-100 project">
@@ -188,8 +341,17 @@
                 </div>
             </div>
         </div>
+
+
+
+
+
+
+
     </section>
-    <!-- Signup-->
+
+
+    <!-- Contact-->
     <section class="signup-section" id="contact">
 
         <div class="container px-4 px-lg-5">
@@ -207,7 +369,7 @@
                     <div class="card py-4 h-100">
                         <div class="card-body text-center">
                             <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                            <h4 class="text-uppercase m-0">Addresse</h4>
+                            <h4 class="text-uppercase m-0">Adresse</h4>
                             <hr class="my-4 mx-auto" />
                             <div class="small text-black-50">6 Avenue Blaise Pascal, 77420 Champs-sur-Marne</div>
                         </div>
@@ -220,7 +382,7 @@
                             <h4 class="text-uppercase m-0">E-mail</h4>
                             <hr class="my-4 mx-auto" />
                             <div class="small text-black-50">
-                                <a href="mailto:vertigeo@ensg.eu">vertigeo@ensg.eu</a>
+                                <a href="mailto:vertigeo@ensg.eu">commercial@vertigeo.fr</a>
                             </div>
                         </div>
                     </div>
@@ -238,7 +400,7 @@
                 </div>
             </div>
             <div class="social d-flex justify-content-center mt-5">
-                <a class="mx-2" href="https://www.linkedin.com/in/vertig%C3%A9o-communication/"><i
+                <a class="mx-2" href="https://linkedin.com/company/vertigeo-ensg/about/"><i
                         class="fab fa-linkedin fa-3x"></i></a>
                 <a class="mx-2" href="https://instagram.com/vertigeo_junior"><i class="fab fa-instagram fa-3x"></i></a>
 

@@ -52,3 +52,56 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    const animationDuration = 3000; // 3 seconds
+
+    // Function to animate each number with ease-out effect
+    const animateNumbers = (stat) => {
+        const target = +stat.getAttribute('data-target'); // Target number to reach
+        const start = 0;
+        const startTime = performance.now(); // Record the start time
+
+        const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3); // Ease-out cubic function
+
+        const updateCount = (currentTime) => {
+            const elapsedTime = currentTime - startTime; // Time passed since animation started
+            const progress = Math.min(elapsedTime / animationDuration, 1); // Normalize the progress [0, 1]
+
+            const easeProgress = easeOutCubic(progress); // Apply easing function to progress
+            const current = Math.floor(easeProgress * target); // Calculate current value
+
+            stat.innerText = current; // Update the number
+
+            if (progress < 1) {
+                requestAnimationFrame(updateCount); // Continue animation if progress is less than 100%
+            } else {
+                stat.innerText = target; // Ensure the final value is the exact target
+            }
+        };
+
+        requestAnimationFrame(updateCount); // Start the animation
+    };
+
+    // Intersection Observer to trigger animation on scroll
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const stat = entry.target;
+                animateNumbers(stat);
+                observer.unobserve(stat); // Stop observing once the animation has started
+            }
+        });
+    }, { threshold: 0.5 }); // Start animation when 50% of the element is visible
+
+    // Observe each stat number for scroll interaction
+    statNumbers.forEach(stat => {
+        observer.observe(stat);
+    });
+});
+
+
+var myModal = new bootstrap.Modal(document.getElementById('myModal'), {})
+myModal.toggle()

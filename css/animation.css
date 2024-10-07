@@ -1,0 +1,67 @@
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: #F8F9FA; /* Optional: background color */
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  animation: scroll 20s linear infinite;
+}
+
+.marquee-content img {
+  margin: 0 10px; /* Adjust spacing between images */
+  height: 50px; /* Set consistent height */
+  width: auto; /* Maintain aspect ratio */
+}
+
+@keyframes scroll {
+  0% {
+      transform: translateX(0%);
+  }
+  100% {
+      transform: translateX(-50%);
+  }
+}
+
+.partners-img {
+    opacity: 0; /* Ensure the container is initially invisible */
+    transition: opacity 1s ease-in-out; /* Transition for the container */
+}
+
+.partners-img.visible {
+    opacity: 1;
+}
+
+.partners-img img {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Apply individual delays to each image */
+.partners-img.visible .partner1 {
+    transition-delay: 0.1s;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.partners-img.visible .partner2 {
+    transition-delay: 0.3s;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.partners-img.visible .partner3 {
+    transition-delay: 0.5s;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.partners-img.visible .partner4 {
+    transition-delay: 0.7s;
+    opacity: 1;
+    transform: translateY(0);
+}
